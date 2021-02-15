@@ -1,0 +1,15 @@
+questions=(
+	# "{+ax.tc4d# &{xt4#6+89 abcdefg" # ok
+
+	# "{+ a x.t c 4 d #"" &{xt4#6+89 abcdefg" # ok with spaces
+	"{+ a x.t c 4 d #'&{xt4#6+89'abcdefg" # ok with spaces
+	"{+ax.tc4d#'&{xt4#6+89'abcdef" # fail pour le nombre d'operateurs
+
+	# "{+ax.tc4d# &{xt4#6+89 abcdef" # fail pour le nombre d'operateurs
+	# "{+ax.tc4d# &{xt4#6+89a abcdefg" # fail pour le 'a' dans la base
+	# "{+ax.th4d# &{xt4#6+89 abcdefg" # fail pour mauvaise expression ("h")
+	# "c{+ax.tc4d# &{xt4#6+89 abcdefg" # fail pour mauvais premier char ("c")
+	# "{+ax.tc4d#f &{xt4#6+89 abcdefg" # fail pour mauvais dernier char ("f")
+	# "{+ax.tgc4d# &{xt4#6+89 abcdefg" # fails pour ( manquante
+	# "{+affx.tgc4d# &{xt4#6+89 abcdefg" # fails pour ) manquante
+)
